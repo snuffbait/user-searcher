@@ -274,9 +274,10 @@ sites = {
     "MyFitnessPal":         "https://www.myfitnesspal.com/profile/{}",
     "Komoot":               "https://www.komoot.com/user/{}",
     "AllTrails":            "https://www.alltrails.com/members/{}",
+
 }
 
-ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.6367.155 Safari/537.36"
 
 hits = []
 misses = []
@@ -286,7 +287,7 @@ mu = threading.Lock()
 
 def chk(name, url):
     try:
-        r = requests.get(url, headers={"User-Agent": ua}, timeout=8, allow_redirects=True)
+        r = requests.get(url, headers={"User-Agent": agent}, timeout=8, allow_redirects=True)
         with mu:
             if r.status_code == 200:
                 hits.append((name, url))

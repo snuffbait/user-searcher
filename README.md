@@ -1,9 +1,3 @@
-# user-searcher
-
-pip install requests
-
-searches across around 200 platforms 
-
 
 
 
